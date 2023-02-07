@@ -1,23 +1,21 @@
-import { useState } from 'react'
 import useChange from '../../../hook/usechange'
 
 const SignIn = () => {
-  const [user, setUser] = useState({})
-
-  console.log(user)
-
   const [inputType, setInputType] = useChange('password', 'text')
 
-  const submit = (e: any) => {
+  const submit = (e: Event) => {
     e.preventDefault()
-    console.log(e.target)
   }
 
   return (
     <section className='layout-flex login'>
       <div className='form-container'>
         <h3 className='form-title'>Create a new user</h3>
-        <form className='signin' onSubmit={submit}>
+        <form
+          className='signin'
+          onSubmit={() => {
+            submit
+          }}>
           <div className='field'>
             <label htmlFor='firstname'>
               name
@@ -57,7 +55,7 @@ const SignIn = () => {
               <input
                 id='password'
                 name='password'
-                type={inputType}
+                type={inputType.toString()}
                 placeholder='********'
               />
             </label>
@@ -68,7 +66,9 @@ const SignIn = () => {
                 type='checkbox'
                 name='showpassword'
                 id='showpassword'
-                onClick={setInputType}
+                onClick={() => {
+                  setInputType
+                }}
               />
               Show Password
             </label>

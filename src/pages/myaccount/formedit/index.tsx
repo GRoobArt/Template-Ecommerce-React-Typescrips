@@ -1,12 +1,16 @@
 const EditForms = () => {
-  const submit = (e) => {
+  const submit = (e: Event) => {
     e.preventDefault()
   }
   return (
     <section className='layout-flex login'>
       <div className='form-container'>
         <h4 className='form-title'>My account</h4>
-        <form className='signin' onSubmit={submit}>
+        <form
+          className='signin'
+          onSubmit={() => {
+            submit
+          }}>
           <div className='field'>
             <label htmlFor='firstname'>
               name

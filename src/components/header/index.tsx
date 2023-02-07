@@ -3,7 +3,6 @@ import SignInButton from './signin/index'
 import ShoppingCart from './cart/index'
 import NavHeader from './nav/index'
 import { IconsBurger } from '../../variables'
-import ButtonTheme from '../layout/buttontheme'
 
 const HeaderPage = ({ theme }: any) => {
   return (
@@ -19,7 +18,6 @@ const HeaderPage = ({ theme }: any) => {
         </div>
 
         <NavHeader />
-        <ButtonTheme />
         <SignInButton />
         <ShoppingCart />
       </nav>

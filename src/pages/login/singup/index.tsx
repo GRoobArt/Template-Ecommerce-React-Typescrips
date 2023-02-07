@@ -4,13 +4,17 @@ import useChange from '../../../hook/usechange'
 const SignUp = () => {
   const [inputType, setInputType] = useChange('password', 'text')
 
-  const submit = (e) => {
+  const submit = (e: Event) => {
     e.preventDefault()
   }
   return (
     <section className='layout-flex login'>
       <div className='form-container'>
-        <form className='signup' onSubmit={submit}>
+        <form
+          className='signup'
+          onSubmit={() => {
+            submit
+          }}>
           <div className='field'>
             <label htmlFor='email'>
               email
@@ -28,7 +32,7 @@ const SignUp = () => {
               <input
                 id='password'
                 name='password'
-                type={inputType}
+                type={inputType.toString()}
                 placeholder='********'
               />
             </label>
@@ -39,7 +43,9 @@ const SignUp = () => {
                 type='checkbox'
                 name='showpassword'
                 id='showpassword'
-                onClick={setInputType}
+                onClick={() => {
+                  setInputType
+                }}
               />
               Show Password
             </label>

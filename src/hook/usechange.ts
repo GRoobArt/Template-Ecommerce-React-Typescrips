@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
-type changetType = string | Object
-
-const useChange = (typeBase: changetType, changType: changetType) => {
+const useChange = (typeBase: string, changType: string) => {
   const [show, setShow] = useState(false)
   const [type, setType] = useState(typeBase)
 
