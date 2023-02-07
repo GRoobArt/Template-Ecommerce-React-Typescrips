@@ -6,11 +6,13 @@ const NavHeader = () => {
   return (
     <div className='category'>
       <ul>
-        {categories.reverse().map(({ id, name }) => (
-          <li className='nav-link' key={id}>
-            <NavLink to={id.toString()}>{name}</NavLink>
-          </li>
-        ))}
+        {categories
+          .sort((i) => i.id)
+          .map(({ id, name }) => (
+            <li className='nav-link' key={id}>
+              <NavLink to={id.toString()}>{name}</NavLink>
+            </li>
+          ))}
       </ul>
     </div>
   )

@@ -7,7 +7,7 @@ import { IconsBurger } from '../../variables'
 const HeaderPage = ({ theme }: any) => {
   return (
     <header className={theme}>
-      <nav>
+      <nav className='desktop'>
         <button className='action-icons burger'>
           <IconsBurger />
         </button>
