@@ -1,0 +1,55 @@
+header {
+  border-bottom: 1px solid #colors[white];
+  background: #colors[white];
+  #shadow.shadow-base;
+}
+
+// Mobile
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.5rem 12px;
+
+    > nav {
+      > .logo {
+        text-align: center;
+        flex: 2;
+      }
+
+      > .category,
+      > .account {
+        display: none;
+      }
+    }
+  }
+}
+
+// Desktop
+
+@media (min-width: 1024px) {
+  header {
+    padding: 0.5rem 40px;
+
+    > nav {
+      > .burger {
+        display: none;
+      }
+
+      > .logo {
+        > a {
+          img {
+            width: 140px;
+          }
+        }
+      }
+
+      > .category {
+        flex: 2;
+      }
+
+      > .account {
+        display: flex;
+      }
+    }
+  }
+}

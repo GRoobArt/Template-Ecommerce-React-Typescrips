@@ -1,0 +1,63 @@
+button,
+a.button {
+  font-weight: 700;
+  display: block;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+
+  &.full {
+    width: 100%;
+  }
+
+  &.action-primary {
+    color: #colors[white];
+    background-color: #colors[green];
+    border-radius: 10px;
+    text-transform: capitalize;
+
+    &:hover {
+      background-color: #colors[grey-400];
+    }
+  }
+
+  &.action-secondary {
+    background-color: transparent;
+    color: #colors[green];
+    border: 1px solid #colors[green];
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  &.action-link {
+    text-decoration: none;
+    color: #colors[green];
+    text-transform: capitalize;
+  }
+
+  &.action-icons {
+    background-color: transparent;
+    padding: 0.5rem;
+
+    > * {
+      padding: 0;
+      margin: 0;
+    }
+
+    &.theme {
+      display: flex;
+      border-radius: 50%;
+      #shadow.shadow-base;
+
+      &.dark {
+        background-color: #colors[dark];
+        box-shadow: none;
+
+        > * {
+          color: #colors[white];
+        }
+      }
+    }
+  }
+}

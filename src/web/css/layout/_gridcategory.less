@@ -1,0 +1,27 @@
+.main-content {
+  .header-category {
+    > .page-title {
+      text-transform: capitalize;
+    }
+  }
+
+  .categorygrid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  }
+}
+
+// Mobile
+@media (max-width: 480px) {
+}
+
+// Desktop
+@media (min-width: 1024px) {
+  .main-content {
+    .categorygrid {
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+    }
+  }
+}

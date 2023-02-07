@@ -1,0 +1,34 @@
+.form-container {
+  width: 100%;
+  max-width: 340px;
+  > .signin {
+    .field {
+      &:nth-child(-n + 2) {
+        display: inline-block;
+        width: calc(50% - 0.25rem);
+      }
+      &:nth-child(2) {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  > .signup,
+  > .recoverypassword {
+    > .password {
+      font-weight: 400;
+      font-size: 0.85rem;
+    }
+
+    > .signin {
+      margin-top: 2rem;
+    }
+  }
+
+  form {
+    input[type='submit'],
+    button[type='submit'] {
+      margin-top: 1rem;
+    }
+  }
+}

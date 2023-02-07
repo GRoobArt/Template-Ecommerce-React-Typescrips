@@ -1,0 +1,33 @@
+nav {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  vertical-align: middle;
+  gap: 1.5rem;
+  width: 100%;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    li {
+      a {
+        text-transform: capitalize;
+        box-sizing: border-box;
+        padding: 0.5rem 1rem;
+        display: block;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #colors[grey-300];
+        border: 1px solid #colors[white];
+        &:hover,
+        &.active {
+          color: #colors[green];
+          border: 1px solid #colors[green];
+        }
+      }
+    }
+  }
+}
