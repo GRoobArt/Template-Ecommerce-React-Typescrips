@@ -7,10 +7,9 @@ header {
 // Mobile
 
 @media (max-width: 480px) {
-  header {
+  nav {
     padding: 0.5rem 12px;
-
-    > nav {
+    &.desktop {
       > .logo {
         text-align: center;
         flex: 2;
@@ -21,35 +20,47 @@ header {
         display: none;
       }
     }
+
+    &.mobile {
+      padding: 0.5rem 12px;
+      > .category {
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
   }
 }
 
 // Desktop
 
 @media (min-width: 1024px) {
-  header {
+  nav {
     padding: 0.5rem 40px;
+    > .burger {
+      display: none;
+    }
 
-    > nav {
-      > .burger {
-        display: none;
-      }
+    &.mobile {
+      display: none;
+    }
 
-      > .logo {
-        > a {
-          img {
-            width: 140px;
-          }
+    > .logo {
+      > a {
+        img {
+          width: 140px;
         }
       }
+    }
 
-      > .category {
-        flex: 2;
-      }
+    > .category {
+      flex: 2;
+    }
 
-      > .account {
-        display: flex;
-      }
+    > .account {
+      display: flex;
     }
   }
 }
