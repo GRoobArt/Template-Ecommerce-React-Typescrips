@@ -1,18 +1,16 @@
 import { NavLink } from 'react-router-dom'
-import data from '../../../json/info.json'
+import data from '../../../data.json'
 
 const NavHeader = () => {
-  const categories = data.category
+  const categories = data.category.sort((a, b) => a.id - b.id)
   return (
     <div className='category'>
       <ul>
-        {categories
-          .sort((i) => i.id)
-          .map(({ id, name }) => (
-            <li className='nav-link' key={id}>
-              <NavLink to={id.toString()}>{name}</NavLink>
-            </li>
-          ))}
+        {categories.map(({ id, name }) => (
+          <li className='nav-link' key={id}>
+            <NavLink to={id.toString()}>{name}</NavLink>
+          </li>
+        ))}
       </ul>
     </div>
   )

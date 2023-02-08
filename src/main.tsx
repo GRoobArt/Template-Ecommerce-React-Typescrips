@@ -9,7 +9,7 @@ import './web/_global.less'
 import 'normalize.css'
 
 // Pages
-import AllCategory from './pages/categories/all'
+import AllCategory from './pages/categories'
 import ErrorPage from './pages/errorpage'
 import MyAccount from './pages/myaccount'
 import SignIn from './pages/login/signin'

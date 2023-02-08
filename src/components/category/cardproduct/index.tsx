@@ -1,7 +1,6 @@
 import { ProductInterface } from '../../../interface/interfaces'
 import { IconsAddCart, IconsRemoveCart } from '../../../variables'
 import useFormat from '../../../hook/useFormat'
-import { AddCart } from '../../../context/cart/useaddcart'
 
 const CardProduct = ({
   id,
@@ -20,10 +19,6 @@ const CardProduct = ({
     else return ((price - specialprice) / price) * 100
   }
 
-  const addToCart = () => {
-    AddCart(id, price, specialprice)
-  }
-
   return (
     <div className='product-card'>
       <div className='header-content'>
@@ -32,7 +27,7 @@ const CardProduct = ({
             % {Number(PorcentDescuento()).toFixed(1)}
           </div>
         )}
-        <img src={img} />
+        <img src={img} loading='lazy' />
       </div>
       <div className='body-content'>
         <div className='info-product'>
@@ -48,7 +43,7 @@ const CardProduct = ({
           </div>
           <h3 className='product-name'>{name}</h3>
         </div>
-        <button className='button action-icons' onClick={addToCart}>
+        <button className='button action-icons'>
           <figure>{!cart_to ? <IconsAddCart /> : <IconsRemoveCart />}</figure>
         </button>
       </div>
